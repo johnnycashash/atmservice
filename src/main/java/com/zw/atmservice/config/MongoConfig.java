@@ -1,14 +1,14 @@
 package com.zw.atmservice.config;
 
-import com.zw.atmservice.dao.ATMInfoRepository;
-import com.zw.atmservice.dao.AccountRepository;
-import com.zw.atmservice.dao.CardRepository;
-import com.zw.atmservice.dto.Denomination;
-import com.zw.atmservice.dto.DenominationDetail;
-import com.zw.atmservice.entity.ATMInfo;
-import com.zw.atmservice.entity.Account;
-import com.zw.atmservice.entity.Card;
-import com.zw.atmservice.security.HashGenerator;
+import com.zw.atmservice.account.dao.AccountRepository;
+import com.zw.atmservice.account.entity.Account;
+import com.zw.atmservice.atm.dao.ATMInfoRepository;
+import com.zw.atmservice.atm.dto.Denomination;
+import com.zw.atmservice.atm.dto.DenominationDetail;
+import com.zw.atmservice.atm.entity.ATMInfo;
+import com.zw.atmservice.atm.security.HashGenerator;
+import com.zw.atmservice.card.dao.CardRepository;
+import com.zw.atmservice.card.entity.Card;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -38,8 +38,6 @@ public class MongoConfig {
             denominationDetails.add(new DenominationDetail(new Denomination(10L, "pounds"), 30L));
             denominationDetails.add(new DenominationDetail(new Denomination(5L, "pounds"), 20L));
             atmInfoRepository.save(new ATMInfo(1L, denominationDetails));
-
-
         };
     }
 }
