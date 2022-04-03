@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "c859b331-65b2-48ff-a0c9-98eebae22b56",
+		"name": "atm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetBalance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardNumber\":1111,\r\n    \"pin\": 1234\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/atm/checkBalance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"atm",
+						"checkBalance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WithdrawBalance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"atmId\": 1,\r\n    \"cardNumber\":1111,\r\n    \"pin\": 1234,\r\n    \"amount\": 255\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/atm/withdrawBalance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"atm",
+						"withdrawBalance"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
