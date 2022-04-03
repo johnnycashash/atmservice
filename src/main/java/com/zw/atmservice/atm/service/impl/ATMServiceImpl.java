@@ -132,6 +132,18 @@ public class ATMServiceImpl implements ATMService {
         }
     }
 
+    @Override
+    public AtmInfoDetail checkAtm(Long atmId) throws ATMGeneralException {
+        Optional<ATMInfo> atmInfo = atmInfoRepository.findById(atmId);
+        if (atmInfo.isPresent()) {
+            AtmInfoDetail target = new AtmInfoDetail();
+            BeanUtils.copyProperties(atmInfo.get(), target);
+            return target;
+        } else {
+            throw new ATMGeneralException("ATM info not found");
+        }
+    }
+
     private void checkATMContainsAmount(Long requestAmount, List<DenominationDetail> denominationDetails) throws InsufficientAmountException {
         Long totalAvailableBalanceInATM = denominationDetails.stream().filter(denominationDetail -> denominationDetail.getCount() != 0)
                 .map(denominationDetail -> denominationDetail.getCount() * denominationDetail.getDenomination().getValue()).reduce(0L, Long::sum);
