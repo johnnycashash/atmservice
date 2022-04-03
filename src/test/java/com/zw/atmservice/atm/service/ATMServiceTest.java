@@ -8,7 +8,6 @@ import com.zw.atmservice.atm.dao.ATMInfoRepository;
 import com.zw.atmservice.atm.dto.*;
 import com.zw.atmservice.atm.entity.ATMInfo;
 import com.zw.atmservice.atm.exception.*;
-import com.zw.atmservice.atm.service.WithdrawUpdateService;
 import com.zw.atmservice.atm.service.impl.ATMServiceImpl;
 import com.zw.atmservice.card.dto.CardDetail;
 import com.zw.atmservice.card.exception.CardGeneralException;
@@ -32,6 +31,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @ActiveProfiles("test")
 public class ATMServiceTest {
 
+    @InjectMocks
+    ATMServiceImpl atmService = new ATMServiceImpl();
     @Mock
     private AccountService accountService;
     @Mock
@@ -40,9 +41,6 @@ public class ATMServiceTest {
     private ATMInfoRepository atmInfoRepository;
     @Mock
     private WithdrawUpdateService withdrawUpdateService;
-
-    @InjectMocks
-    ATMServiceImpl atmService = new ATMServiceImpl();
 
     @Test
     void getBalanceInactiveCardException() throws CardGeneralException, CardNumberInvalidException {

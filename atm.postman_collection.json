@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "GetBalance",
+			"name": "CheckBalance",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -60,6 +60,72 @@
 						"api",
 						"atm",
 						"withdrawBalance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/account/checkAccount/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"account",
+						"checkAccount",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Card",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/account/checkCard/1111",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"account",
+						"checkCard",
+						"1111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AtmInfo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/atminfo/checkAtm/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"atminfo",
+						"checkAtm",
+						"1"
 					]
 				}
 			},
