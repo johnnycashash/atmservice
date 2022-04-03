@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: atmservice
+  profiles:
+    active: @activatedProperties@
+
+atm:
+  exception:
+    trace:
+      enable: false
+
+logging.file.name: ./logs/${spring.application.name}.log

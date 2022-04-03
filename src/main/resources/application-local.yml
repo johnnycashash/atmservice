@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+atm:
+  exception:
+    trace:
+      enable: true
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: test
